@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    place-content: center;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    background-size: 400% 400%;
+    animation: colorCycle 5s ease infinite;
+
+
+}
+
+@keyframes colorCycle {
+    0% {
+      background-image: linear-gradient(to bottom, #FFD700, #F1A7B0, #FF8C00, #87CEEB, #A5D6A7);
+    }
+    50% {
+      background-image: linear-gradient(to bottom, #FF8C00, #FFD700, #87CEEB, #F1A7B0, #A5D6A7);
+    }
+    100% {
+      background-image: linear-gradient(to bottom, #A5D6A7, #FFD700, #FF8C00, #F1A7B0, #87CEEB);
+    }
+  }
+
+.container {
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.intro {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none;
+    color: #000000;
+    padding: 15px 25px;
+    border-radius:6em;
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: 0;
+    animation: slideIn 1s ease forwards;
+}
+
+.btn-panaderia {
+    background-color: #FF6347;
+    animation-delay: 0.1s;
+}
+
+.btn-pasteleria {
+    background-color: #FF1493;
+    animation-delay: 0.2s;
+}
+
+.btn-especias {
+    background-color: #32CD32;
+    animation-delay: 0.3s;
+}
+
+.btn-utensilios {
+    background-color: #1E90FF;
+    animation-delay: 0.4s;
+}
+
+.btn-navidad {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    background: linear-gradient(45deg, #d32f2f, #388e3c);
+    border: 2px solid #ffffff;
+    border-radius: 6em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-navidad:hover {
+    background: linear-gradient(45deg, #388e3c, #d32f2f);
+    color: #ffd700; /* Dorado para el efecto hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+  
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+  
+  .btn::after {
+     background-color: white;
+  }
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.logo {
+    width: 250px; /* Ajusta el tamaño según tu preferencia */
+    margin-bottom: 20px; /* Espacio entre el logo y el título */
+}
+
+
+.container-bar{
+    width: 100%;
+    max-width: 50px;
+    position: fixed;
+    left: 0;
+    top: 25%;
+}
+.container-bar a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: all 500ms ease;
+    color: #fff;
+}
+.container-bar a:hover{
+    background: #1c1c1c;
+}
+.container-bar .fa-brands.fa-instagram{
+    height: 30px;
+    width: 40px;
+	
+	border-radius: 0px 5px 0px 0px;
+}
+
+.container-bar #title{
+    position: absolute;
+    background: #1c1c1c;
+	padding: 0px 8px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 15px;
+	top:12px; left: 0px;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+.container-bar a:hover #title{
+    opacity: 1;
+    visibility: visible;
+    left: 64px;
+}
+.container-bar #title:after{
+    position: absolute;
+    content: '';
+    border-left: 7px solid transparent;
+    border-right: 6px solid #1c1c1c;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    right: 100%;
+    top: 8px;
+}
+#btn-social{
+	display: none;
+}
+.fa-play{
+	cursor: pointer;
+	transition: all 0.4s;
+	font-size: 12px;
+	margin-bottom: 5px;
+	display: inline-block;
+    transform: rotate(180deg);
+	color: #000000;
+}
+#btn-social:checked ~ .fa-play{
+	transform: rotate(0deg);
+}
+.icon-social{
+    transition: all 0.4s;
+    transform: translateX(0%);
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+}
+#btn-social:checked ~ .icon-social{
+	transform: translateX(-100%);
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.0);
+}
+
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    .intro {
+        font-size: 1.5em;
+    }
+}
